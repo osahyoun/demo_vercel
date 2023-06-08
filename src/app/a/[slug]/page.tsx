@@ -11,7 +11,11 @@ async function getData(slug: string) {
   return res.json();
 }
 
-export default async function Page({ params: { slug } }) {
+export default async function Page({
+  params: { slug },
+}: {
+  params: { slug: string };
+}) {
   const data = await getData(slug);
   const { content } = data;
 
